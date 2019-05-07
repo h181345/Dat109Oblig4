@@ -1,0 +1,36 @@
+<Screen xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="210" gr:y="225" id="av1#scr1" name="Shopping Cart">
+  <ViewComponents>
+    <List gr:x="0" gr:y="0" id="av1#scr1#pwu1" name="Product List" checkable="false" dataBinding="cls1" eventOrder="av1#scr1#pwu1#oslte2 av1#scr1#pwu1#oslte4" displayAttributes="cls1#att3">
+      <Events>
+        <OnSelectEvent id="av1#scr1#pwu1#oslte2" name="Empty Cart" validate="true">
+          <NavigationFlow id="av1#scr1#pwu1#oslte2#nf6" to="av1#act1" automaticCoupling="true" name="Empty"/>
+        </OnSelectEvent>
+        <OnSelectEvent id="av1#scr1#pwu1#oslte4" name="Update Quantity" validate="true">
+          <NavigationFlow id="av1#scr1#pwu1#oslte4#nf10" to="av1#act3" automaticCoupling="true" gr:bendpoints="119,-37,-141,78"/>
+        </OnSelectEvent>
+      </Events>
+    </List>
+  </ViewComponents>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Component componentId="av1#scr1#pwu1">
+          <layout:Attribute attribute="cls1#att3"/>
+          <layout:Event event="av1#scr1#pwu1#oslte2" eventType="OnSelectEvent"/>
+          <layout:Event event="av1#scr1#pwu1#oslte4" eventType="OnSelectEvent"/>
+        </layout:Component>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Screen>

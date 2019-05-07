@@ -1,0 +1,5 @@
+Jeg vet ikke helt hva jeg skal si.
+Man mangler servlets, database, qr-koder, enhetstester.
+Det eneste man har er helt enkle objekter, men så mangler man gjerne noen metoder.
+Det kunne vært greit for å starte opp, også fylle ut det som mangler,
+men man skal visst nok ikke endre den genererte koden. Jeg tror det hadde vært enklere å bare lage klassene for hånd.

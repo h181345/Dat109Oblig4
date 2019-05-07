@@ -1,0 +1,67 @@
+<DomainModel xmlns:gr="http://www.webratio.com/2006/WebML/Graph" dataSyncOnReopen="true">
+  <Class gr:x="125" gr:y="35" id="MUser" name="App User" singleton="true" duration="persistent" attributeOrder="mUserOID mUsername">
+    <Attribute id="mUserOID" key="true" name="oid" type="integer" specialBehavior="implicitOid"/>
+    <Attribute id="mUsername" name="username" type="string"/>
+    <Comment xml:space="preserve">App User represents the current user of the mobile application. The user is identified by username. For security reasons, other information, such as the password, is not stored here but in the device account manager. You are free to add any additional attribute to this class.  When using the Mobile Project in combination with a Data Service project, this class must be mapped on the remote User class, and thus inherits its attributes.</Comment>
+  </Class>
+  <Class gr:x="455" gr:y="65" id="MRole" name="App Role" duration="persistent" attributeOrder="mRoleOID mRoleName">
+    <Attribute id="mRoleOID" key="true" name="oid" type="integer" specialBehavior="implicitOid"/>
+    <Attribute id="mRoleName" name="name" type="string"/>
+    <Comment xml:space="preserve">App Role represents an application role belonging to the current user of the mobile application. When the Mobile Project is used in combination with a Data Service project, the list of roles is automatically retrieved from remote at the login.</Comment>
+  </Class>
+  <Association id="MUser2MRole_MRole2MUser" sourceClass="MUser" targetClass="MRole">
+    <AssociationRole1 id="MUser2MRole" name="AppUserToAppRole" maxCard="N"/>
+    <AssociationRole2 id="MRole2MUser" name="AppRoleToAppUser" maxCard="1"/>
+  </Association>
+  <Class gr:x="40" gr:y="375" id="cls1" name="Expo" duration="persistent">
+    <Attribute id="cls1#att1" key="true" name="oid" type="integer" specialBehavior="implicitOid"/>
+  </Class>
+  <Class gr:x="95" gr:y="690" id="cls2" name="Stand" duration="persistent" attributeOrder="cls2#att2 cls2#att8 cls2#att9">
+    <Attribute id="cls2#att2" key="true" name="oid" type="integer" specialBehavior="implicitOid"/>
+    <Attribute id="cls2#att9" name="Institue" type="string"/>
+    <Attribute id="cls2#att8" name="name" type="string"/>
+  </Class>
+  <Class gr:x="170" gr:y="470" id="cls3" name="Vote" duration="persistent" attributeOrder="cls3#att3 cls3#att10">
+    <Attribute id="cls3#att3" key="true" name="oid" type="integer" specialBehavior="implicitOid"/>
+    <Attribute id="cls3#att10" name="voteValue" type="string"/>
+  </Class>
+  <Class gr:x="715" gr:y="405" id="cls4" name="Admin" duration="persistent" attributeOrder="cls4#att4 cls4#att12 cls4#att13">
+    <Attribute id="cls4#att4" key="true" name="oid" type="integer" specialBehavior="implicitOid"/>
+    <Attribute id="cls4#att13" name="hashedPassword" type="string"/>
+    <Attribute id="cls4#att12" name="username" type="string"/>
+  </Class>
+  <Class gr:x="430" gr:y="460" id="cls5" name="Visitor" duration="persistent">
+    <Attribute id="cls5#att5" key="true" name="oid" type="integer" specialBehavior="implicitOid"/>
+  </Class>
+  <Class gr:x="335" gr:y="685" id="cls6" name="Study" duration="persistent" attributeOrder="cls6#att6 cls6#att11">
+    <Attribute id="cls6#att6" key="true" name="oid" type="integer" specialBehavior="implicitOid"/>
+    <Attribute id="cls6#att11" name="studyName" type="string"/>
+  </Class>
+  <Class gr:x="620" gr:y="675" id="cls7" name="Institute" duration="persistent">
+    <Attribute id="cls7#att7" key="true" name="oid" type="integer" specialBehavior="implicitOid"/>
+  </Class>
+  <Association id="as1" name="Expo_Stand" sourceClass="cls1" targetClass="cls2">
+    <AssociationRole1 id="as1#role1" name="ExpoToStand" maxCard="N"/>
+    <AssociationRole2 id="as1#role2" name="StandToExpo" maxCard="1"/>
+  </Association>
+  <Association id="as2" name="Stand_Vote" sourceClass="cls2" targetClass="cls3">
+    <AssociationRole1 id="as2#role3" name="StandToVote" maxCard="N"/>
+    <AssociationRole2 id="as2#role4" name="VoteToStand" maxCard="1"/>
+  </Association>
+  <Association id="as3" name="Stand_Study" sourceClass="cls2" targetClass="cls6">
+    <AssociationRole1 id="as3#role5" name="StandToStudy" maxCard="1"/>
+    <AssociationRole2 id="as3#role6" name="StudyToStand" maxCard="N"/>
+  </Association>
+  <Association id="as4" name="Study_Institute" sourceClass="cls6" targetClass="cls7">
+    <AssociationRole1 id="as4#role7" name="StudyToInstitute" maxCard="1"/>
+    <AssociationRole2 id="as4#role8" name="InstituteToStudy" maxCard="N"/>
+  </Association>
+  <Association id="as5" name="Vote_Visitor" sourceClass="cls3" targetClass="cls5">
+    <AssociationRole1 id="as5#role9" name="VoteToVisitor" maxCard="1"/>
+    <AssociationRole2 id="as5#role10" name="VisitorToVote" maxCard="N"/>
+  </Association>
+  <Class id="cls8" name="integer" duration="persistent" gr:x="725" gr:y="220" attributeOrder="cls8#att14 cls8#att15">
+    <Attribute id="cls8#att14" key="true" name="oid" type="integer" specialBehavior="implicitOid"/>
+    <Attribute id="cls8#att15" name="Value" type="integer"/>
+  </Class>
+</DomainModel>

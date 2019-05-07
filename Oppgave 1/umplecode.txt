@@ -1,0 +1,43 @@
+class Institute{
+institudeId;
+  1 <@>- 1..* Study;
+}
+
+class Expo{
+expoId;
+  
+ 1 -- 1..* Stand;
+  
+      status {
+        NotInProcess { startExpo -> InProcess: }
+        InProcess { endExpo -> NotInProcess: }
+      }
+
+}
+
+
+class Study{
+studyId;
+studyName;
+1 <@>- 1..* Stand;
+}
+
+class Vote{
+voteId;
+voteValue;
+* <@>- 1 Stand;
+* <@>- 1 Visitor;
+}
+
+class Stand{  standId;
+  name;
+  institute;
+}
+
+class Visitor{  visitorId;
+}
+
+class Admin{  username;
+  adminId;
+  hashedPassword;
+}

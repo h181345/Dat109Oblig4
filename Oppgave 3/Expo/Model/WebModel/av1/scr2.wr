@@ -1,0 +1,32 @@
+<Screen xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="420" gr:y="250" id="av1#scr2" name="Stand">
+  <ViewComponents>
+    <List gr:x="0" gr:y="0" id="av1#scr2#pwu2" name="Vote Values" checkable="false" dataBinding="cls8" displayAttributes="cls8#att15" maxResults="5" eventOrder="av1#scr2#pwu2#oslte4">
+      <Events>
+        <OnSelectEvent id="av1#scr2#pwu2#oslte4" name="VoteEvent" validate="true">
+          <NavigationFlow id="av1#scr2#pwu2#oslte4#nf5" to="av1#act1" automaticCoupling="true"/>
+        </OnSelectEvent>
+      </Events>
+    </List>
+  </ViewComponents>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Component componentId="av1#scr2#pwu2">
+          <layout:Attribute attribute="cls8#att15"/>
+          <layout:Event event="av1#scr2#pwu2#oslte4" eventType="OnSelectEvent"/>
+        </layout:Component>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Screen>

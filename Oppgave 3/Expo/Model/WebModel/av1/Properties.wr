@@ -1,0 +1,10 @@
+<AppView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="av1" home="av1#scr1">
+  <Action id="av1#act1" gr:x="255" gr:y="30" name="Vote" definition="tlads0#ad1">
+    <Events>
+      <SuccessEvent id="av1#act1#scce1" definition="tlads0#ad1#spd1">
+        <NavigationFlow id="av1#act1#scce1#nf3" to="av1#scr1#pwu1" automaticCoupling="true"/>
+      </SuccessEvent>
+      <ErrorEvent id="av1#act1#erre1" definition="tlads0#ad1#epd1"/>
+    </Events>
+  </Action>
+</AppView>
